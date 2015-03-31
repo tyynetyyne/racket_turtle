@@ -5,14 +5,14 @@ shapes using Racket-Turtle animation. First you define a list containing the Tur
 
 Example 1: square
 
-(define square1 
-  (list (forward 100) 
-        (turn-left 90) 
-        (forward 100) 
-        (turn-left 90) 
-        (forward 100) 
-        (turn-left 90)
-        (forward 100)))
+> (define square1 
+>  (list (forward 100)
+>        (turn-left 90)
+>        (forward 100)
+>        (turn-left 90)
+>        (forward 100)
+>        (turn-left 90)
+>        (forward 100)))
         
 Then you call the drawing function in the REPL (you need DrRacket to be installed):
 > (draw square1)
