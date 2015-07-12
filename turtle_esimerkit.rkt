@@ -97,7 +97,7 @@
 ;; ----------------------------------------------------------------------------------------------------
 ;; Esimerkki 8: piirrä suoran kuvaaja koordinaatistoon, merkitse neljä pistettä kuvaajalta
 (define viiva-koordinaatistossa 
-  (list (set-bg-grid 20 20 "gris")
+  (list (set-bg-grid 20 20 "pink")
         (pen-up)
         (go-to 0 0)
         (stamper-on leimasin)
@@ -182,4 +182,4 @@
         (show-turtle)
         (repeat 8 (forward 40))))
 
-(draw-custom sateenkaari-viiva 500 500 0.5)
+;(draw-custom sateenkaari-viiva 500 500 0.5)
