@@ -1,0 +1,1 @@
+This is the folder where animated gifs will be stored.
