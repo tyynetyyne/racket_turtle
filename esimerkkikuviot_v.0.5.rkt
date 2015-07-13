@@ -15,9 +15,11 @@
       empty
       (append (list (sivu p l k) (levenevä-spiraali2 (+ p 5) (+ l 1) k (sub1 kerrat))))))
 
-(draw (list (change-bg-color "black")(change-color VÄRIT) (levenevä-spiraali2 1 1 45 100)))
+(define levenevä-spiraali (list (change-bg-color "black")(change-color VÄRIT) (levenevä-spiraali2 1 1 45 100)))
 
-;; Kiertyvä kuvio
+(draw levenevä-spiraali)
+
+;; Spiraalikuvio
 (define VÄRIT2 (list "red" "green" "yellow" "purple"))
 
 (define (spiraali k p kerrat)
@@ -25,15 +27,15 @@
       empty
       (append (list (forward p)(turn-left k)) (spiraali k (+ p 2)(sub1 kerrat)))))
 
-(define spiraali-kuvio
+(define spiraalikuvio
   (list (change-pen-size 2) 
         (change-bg-color "black") 
         (change-color VÄRIT2)
         (spiraali 91 1 152)))
 
-(draw spiraali-kuvio)
+(draw spiraalikuvio)
 
-;; kukka-spiraali
+;; kukkaspiraali
 (define (lehti koko väri)
   (ellipse (* 8 koko) koko "solid" väri))
 
@@ -74,7 +76,7 @@
 
 (draw tähtispiraali)
 
-;; kukka
+;; peilauskukka
 (define (tee-kaari väri koko kynä) 
   (list (change-color väri)
         (change-pen-size kynä)
@@ -90,11 +92,11 @@
         (mirror-y-on)
         (repeat 2 (tee-lehti väri koko kynä))))
 
-(define peilaus-kukka (list (tee-kukka "red" 3 5)
+(define peilauskukka (list (tee-kukka "red" 3 5)
                            (turn-left 45)
                            (tee-kukka "pink" 3 2)))
 
-(draw peilaus-kukka)
+(draw peilauskukka)
 
 ;; multi-kukka-spiraali
 (define (tee-kukat2 määrä koko väri)
@@ -120,7 +122,7 @@
 
 (draw-and-store multi-kukka-spiraali)
         
-;; koordinaatisto
+;; koordinaatisto-kuva
 (define koordinaatisto-kuva
   (list (set-bg-grid 30 30 "blue")
         (set-origin)
@@ -140,14 +142,14 @@
         (go-to -60 120)
         (go-to -60 60)
         (go-to -120 60)
-        (go-to -60 0)  
-        ))
+        (go-to -60 0)))
 
-;(draw koordinaatisto-kuva 600 600 0)
+(draw-custom koordinaatisto-kuva 600 600 0)
 
+;; kukkaspiraali-koordinaatistossa
 (define taustakuva (draw koordinaatisto-kuva))
 
-(define kukka-spiraali-koordinaatistossa
+(define kukkaspiraali-koordinaatistossa
   (list 
    (set-bg-image taustakuva)
    (set-origin)
@@ -156,7 +158,7 @@
         (go-to 0 0)
         (kukka-spiraali 25 1 15)))
 
-(draw kukka-spiraali-koordinaatistossa)
+(draw kukkaspiraali-koordinaatistossa)
 
 
   
