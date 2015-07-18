@@ -13,9 +13,9 @@
 (define (levenevä-spiraali2 p l k kerrat)
   (if (<= kerrat 0)
       empty
-      (append (list (sivu p l k) (levenevä-spiraali2 (+ p 5) (+ l 1) k (sub1 kerrat))))))
+      (cons (sivu p l k) (levenevä-spiraali2 (+ p 5) (+ l 1) k (sub1 kerrat)))))
 
-(define levenevä-spiraali (list (change-bg-color "black")(change-color VÄRIT) (levenevä-spiraali2 1 1 45 100)))
+(define levenevä-spiraali (list (change-bg-color "black")(change-color VÄRIT) (levenevä-spiraali2 1 1 45 45)))
 
 (draw levenevä-spiraali)
 
@@ -58,9 +58,9 @@
       empty
       (cons (rotate koko (tee-kukka2 koko (make-color (random 255)(random 255)(random 255))))(tee-kukat (sub1 määrä)(add1 koko)))))
                     
-(define kukkaspiraali (list (stamper-on (tee-kukat 100 1))
+(define kukkaspiraali (list (stamper-on (tee-kukat 20 1))
                             (pen-up)
-                            (kukka-spiraali 25 1 100)))
+                            (kukka-spiraali 25 1 20)))
 
 (draw kukkaspiraali)
 
@@ -124,8 +124,8 @@
         
 ;; koordinaatisto-kuva
 (define koordinaatisto-kuva
-  (list (set-bg-grid 30 30 "blue")
-        (set-origin)
+  (list (set-origin) 
+        (set-bg-grid 30 30 "blue")
         (mirror-x-on)
         (mirror-y-on)
         (stamper-on (circle 5 "solid" "red"))
