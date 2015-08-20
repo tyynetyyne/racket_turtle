@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-advanced-reader.ss" "lang")((modname esimerkkikuviot_v.0.5) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f ())))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname esimerkkikuviot_v.0.5) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (require 2htdp/image)
 (require "teachpacks/racket_turtle.rkt")
 
@@ -62,7 +62,7 @@
                             (pen-up)
                             (kukka-spiraali 25 1 20)))
 
-(draw kukkaspiraali)
+(draw-and-store kukkaspiraali)
 
 ;; tähtispiraali
 (define (tee-tähdet määrä koko)
@@ -80,7 +80,7 @@
 (define (tee-kaari väri koko kynä) 
   (list (change-color väri)
         (change-pen-size kynä)
-        (repeat (round (* (/ 90 koko))) (list (forward koko) (turn-left koko)))))
+        (repeat (round (/ 90 koko)) (list (forward koko) (turn-left koko)))))
 
 (define (tee-lehti väri koko kynä)
   (list (tee-kaari väri koko kynä)
@@ -120,7 +120,7 @@
         (go-to 0 0)
         (kukka-spiraali 25 1 15)))
 
-(draw-and-store multi-kukka-spiraali)
+(draw multi-kukka-spiraali)
         
 ;; koordinaatisto-kuva
 (define koordinaatisto-kuva
@@ -159,7 +159,3 @@
         (kukka-spiraali 25 1 15)))
 
 (draw kukkaspiraali-koordinaatistossa)
-
-
-  
-  
