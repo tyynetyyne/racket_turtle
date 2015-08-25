@@ -1,7 +1,7 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname turtle_esimerkit) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
-(require "teachpacks/racket_turtle.rkt")  
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname turtle_esimerkit) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require teachpacks/racket-turtle)  
 (require 2htdp/image)
 
 ;; DrRacket: valitse Beginning Student Language
@@ -15,7 +15,7 @@
 ;; Esimerkki 1: piirrä neliö
 (define neliö 
   (list (forward 100) 
-        (turn-left 90) 
+        (turn-left -90.8) 
         (forward 100) 
         (turn-left 90) 
         (forward 100) 
@@ -33,7 +33,7 @@
 (define toisto-neliö 
   (repeat 4 sivu))
 
-;(draw toisto-neliö)
+(draw toisto-neliö)
 
 ;; ---------------------------------------------------------------------------------------------------
 ;; Esimerkki 3: piirrä kaksi neliötä samaan kuvaan

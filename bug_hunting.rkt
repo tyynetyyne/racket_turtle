@@ -1,11 +1,11 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname bug_hunting) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname bug_hunting) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ; Test code for finding a bug in animated gif creation (big-bang option: record)
 ; The last image of the animated gif is not correct in half of the cases (sometimes works
 ; fine, sometimes displays an earlier (random) image as the final image).
 
-(require "teachpacks/racket_turtle.rkt")
+(require teachpacks/racket-turtle)
 
 (define (make-side len ang)
   (list (forward len)(turn-left ang)))
