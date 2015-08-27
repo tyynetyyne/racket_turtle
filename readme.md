@@ -18,9 +18,8 @@ Example 1: square
 2) Then you give the defined list to a drawing function:
 > (draw square1)
 
-More examples and full description of the Turtle-commands can be found in these files:
-- racket_turtle_examples.rkt  (English)
-- racket_turtle_esimerkit.rkt (Finnish)
+The complete documentation of this library can be found in: 
+http://racket.koodiaapinen.fi/racket_turtle_eng/index.html 
 
 Want to see Racket Turtle in action? 
 http://touch.wescheme.appspot.com/view?publicId=DhQn0zS5LN (select "Play")
